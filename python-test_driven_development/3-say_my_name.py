@@ -1,26 +1,17 @@
 #!/usr/bin/python3
-"""
-This module provides a function that prints a person's full name.
-
-The function ensures that both first name and last name are strings.
-"""
+"""This module provides a function that adds two integers."""
 
 
-def say_my_name(first_name, last_name=""):
+def add_integer(a, b=98):
+    """Return the addition of a and b as integers.
+
+    a and b must be integers or floats. Floats are cast to integers before
+    performing the addition.
     """
-    Prints a formatted string with the first and last name.
-
-    Args:
-        first_name (str): first name
-        last_name (str): last name
-
-    Raises:
-        TypeError: if first_name or last_name is not a string
-    """
-    if not isinstance(first_name, str):
-        raise TypeError("first_name must be a string")
-    if not isinstance(last_name, str):
-        raise TypeError("last_name must be a string")
-
-    print("My name is {} {}".format(first_name, last_name))
-
+    if not isinstance(a, int) and not isinstance(a, float):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, int) and not isinstance(b, float):
+        raise TypeError("b must be an integer")
+    a = int(a)
+    b = int(b)
+    return a + b
