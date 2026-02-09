@@ -1,0 +1,48 @@
+>>> MyList = __import__('1-my_list').MyList
+
+# Docstring check (often required by Holberton checkers)
+>>> len(__import__('1-my_list').__doc__) > 5
+True
+
+# Basic case: print_sorted() prints sorted list without modifying original
+>>> ml = MyList([3, 1, 2])
+>>> ml.print_sorted()
+[1, 2, 3]
+>>> ml
+[3, 1, 2]
+
+# Empty list
+>>> ml2 = MyList([])
+>>> ml2.print_sorted()
+[]
+
+# Duplicates and negatives
+>>> ml3 = MyList([10, -1, 10, 2])
+>>> ml3.print_sorted()
+[-1, 2, 10, 10]
+>>> ml3
+[10, -1, 10, 2]
+
+# No argument (default empty list)
+>>> ml4 = MyList()
+>>> ml4.print_sorted()
+[]
+
+# Append test
+>>> ml5 = MyList()
+>>> ml5.append(2)
+>>> ml5.append(1)
+>>> ml5.append(4)
+>>> ml5.print_sorted()
+[1, 2, 4]
+>>> ml5
+[2, 1, 4]
+
+# Inheritance check
+>>> isinstance(ml, list)
+True
+
+# Non-iterable argument should raise TypeError (list behavior)
+>>> MyList(0)
+Traceback (most recent call last):
+TypeError: 'int' object is not iterable
